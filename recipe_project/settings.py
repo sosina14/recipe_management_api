@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'recipes',
     'django_filters',
 
+    
+
 ]
 
 MIDDLEWARE = [
