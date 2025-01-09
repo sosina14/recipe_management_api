@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<section class="recipe-list">
+    <h1>Recipes</h1>
+    <img src="{{ recipe.image.url if recipe.image else static('images/recipe_default.jpg') }}" alt="{{ recipe.title }}">
+
+    <div class="recipes">
+        {% for recipe in recipes %}
+        <div class="recipe-card">
+            <img src="{{ recipe.image.url if recipe.image else static('images/recipe_default.jpg') }}" alt="{{ recipe.title }}">
+            <h2>{{ recipe.title }}</h2>
+            <p>{{ recipe.description|truncatewords:20 }}</p>
+            <a href="{% url 'recipe_detail' recipe.id %}">View Details</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{{ recipe.title }}{% endblock %}
+{% block content %}
+<section class="recipe-detail">
+    <h1>{{ recipe.title }}</h1>
+    <img src="{{ recipe.image.url if recipe.image else static('images/recipe_default.jpg') }}" alt="{{ recipe.title }}">
+    <p><strong>Category:</strong> {{ recipe.category }}</p>
+    <p><strong>Prep Time:</strong> {{ recipe.prep_time }} mins</p>
+    <p><strong>Cook Time:</strong> {{ recipe.cook_time }} mins</p>
+    <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+    <h2>Ingredients</h2>
+    <ul>
+        {% for ingredient in ingredients %}
+        <li>{{ ingredient }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Instructions</h2>
+    <p>{{ recipe.instructions }}</p>
+</section>
+{% endblock %}
