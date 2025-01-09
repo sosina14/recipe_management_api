@@ -9,3 +9,7 @@
 | `/api/recipes/<id>/` | DELETE | Delete a recipe |
 | `/api/recipes/category/<category>/` | GET | Filter recipes by category |
 | `/api/recipes/ingredient/<ingredient>/` | GET | Filter recipes by ingredient |
+
+Test instructions (python manage.py test)
+Pagination details
+Example request/response samples

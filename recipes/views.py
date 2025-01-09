@@ -1,5 +1,8 @@
 from django.shortcuts import render
-
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework import viewsets
+from .models import Recipe
+from .serializers import RecipeSerializer
 
 from rest_framework import viewsets, permissions, filters
 from .models import Recipe
@@ -19,3 +22,13 @@ class RecipeViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(creator=self.request.user)
+
+
+class RecipeViewSet(viewsets.ModelViewSet):
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+
+    def get_permissions(self):
+        if self.action in ['create', 'update', 'destroy']:
+            return [IsAuthenticated()]
+        return [IsAuthenticatedOrReadOnly()]
