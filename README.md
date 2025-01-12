@@ -93,6 +93,9 @@ The Recipe Management API is a Django-based backend system that allows users to 
 This project was selected because it provides practical experience in backend development with Django and Django REST Framework. The focus on authentication, filtering, and efficient data management simulates real-world development challenges and solutions.
 
 ---
-
+## Author
+**Sosina Ayele**
+- GitHub: [sosina14](https://github.com/sosina14/recipe_management_api))
+- Email:pittercakity@gmail.com
 
 
